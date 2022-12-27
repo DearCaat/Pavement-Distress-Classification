@@ -54,7 +54,9 @@ This [paper](https://ieeexplore.ieee.org/abstract/document/9447759) **first prop
 
 This [paper](https://dl.acm.org/doi/abs/10.1145/3503161.3548176) first introduces the **Vision Transformer** into the PDC, and achieves 2.4% more detection performance gains in P@R, 3.9% recognition performance gains in F1, **1.8x higher throughput**, and **7x faster training speed**.
 
-**arXiv version**: [PicT](https://arxiv.org/abs/2209.10074)
+**arXiv version: [PicT](https://arxiv.org/abs/2209.10074)**
+
+**Code: [Github](https://github.com/DearCaat/PicT)**
 
 ### WSPLIN-IP (ICASSP 2021)
 
