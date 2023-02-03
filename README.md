@@ -11,8 +11,8 @@ With the rapid growth of transport infrastructures such as airports, bridges, an
 - [Methods](#method)
   - [IOPLIN (T-ITS)](#ioplin-t-its)
   - [PicT (MM 2022)](#pict-acmmm-2022)
-  - [WSPLIN](#wsplin-ip-icassp-2021)
-  - [WSPLIN-IP (ICASSP 2021)](#wsplin-t-its-under-review)
+  - [WSPLIN (T-ITS)](#wsplin-t-its)
+  - [WSPLIN-IP (ICASSP 2021)](#wsplin-ip-icassp-2021)
   - [DPSSL (Electronics Letters)](#dpssl-electronics-letters)
 - [Citations](#citations)
 
@@ -66,7 +66,7 @@ This [paper](https://ieeexplore.ieee.org/abstract/document/9413517) proposes an 
 
 **Code: [Github](https://github.com/DearCaat/WSPLIN)**
 
-### WSPLIN (T-ITS under review)
+### WSPLIN (T-ITS)
 
 <img src=".\doc\wsplin.png" alt="wsplin" width="500px" />
 
