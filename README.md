@@ -40,7 +40,7 @@ Three public pavement crack segmentation (pixel-level pavement crack detection) 
 
 ## Method
 
-### IOPLIN (T-ITS)
+### IOPLIN (IEEE T-ITS)
 
 <img src=".\doc\ioplin.png" alt="ioplin" width="500px" />
 
@@ -66,7 +66,7 @@ This [paper](https://ieeexplore.ieee.org/abstract/document/9413517) proposes an 
 
 **Code: [Github](https://github.com/DearCaat/WSPLIN)**
 
-### WSPLIN (T-ITS)
+### WSPLIN (IEEE T-ITS)
 
 <img src=".\doc\wsplin.png" alt="wsplin" width="500px" />
 
