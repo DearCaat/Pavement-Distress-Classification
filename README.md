@@ -70,7 +70,9 @@ This [paper](https://ieeexplore.ieee.org/abstract/document/9413517) proposes an 
 
 <img src=".\doc\wsplin.png" alt="wsplin" width="500px" />
 
-This [paper](https://arxiv.org/abs/2203.16782) is an extension of [WSPLIN-IP](###WSPLIN-IP (ICASSP 2021)). It rethinks the patch collection strategy, and **finds a good trade-off between performance and efficiency**.
+This [paper](https://ieeexplore.ieee.org/document/10050387) is an extension of [WSPLIN-IP](###WSPLIN-IP (ICASSP 2021)). It rethinks the patch collection strategy, and **finds a good trade-off between performance and efficiency**.
+
+**arXiv version: [WSPLIN](https://arxiv.org/abs/2203.16782)**
 
 **Code: [Github](https://github.com/DearCaat/WSPLIN)**
 ### DPSSL (Electronics Letters)
