@@ -1,3 +1,0 @@
-MODEL:
-  NAME: stn_1_bn
-  BACKBONE: tf_efficientnet_b3

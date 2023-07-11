@@ -5,12 +5,16 @@ DATA:
   DATALOADER_NAME: torch_patch_pict
   IMG_SIZE: [900,1200]
   BATCH_SIZE: 4
-  CLS_NOR_INDEX: 6
+  CLS_NOR_INDEX: 0
   LAST_TRANSFORM: false
   IS_IP: true
   PATCH_SIZE: [300,300]
   STRIDE: [300,300]
   NUM_PATCHES: 17
+
+TARGET_AUG:
+  NO_AUG: false
+  TO_BIN_TARGET: true
 
 TRAINER:
   NAME: wsplin
@@ -26,12 +30,13 @@ TRAIN:
     DECAY_STEPS_RATIO: 0.75
 TEST:
   BEST_MODEL_METRIC: ['main','macro_f1']
+  BINARY_MODE: false
+  
 MODEL:
-  NUM_CLASSES: 8
+  NUM_CLASSES: 2
   NAME: wsplin
   BACKBONE: tf_efficientnet_b3
   PRETRAINED: false
-  BACKBONE_INIT: 63.5_effi_b3_backbone.pth
 
 WSPLIN:
   ONLY_BACKBONE: false

@@ -36,7 +36,6 @@ MODEL:
   NAME: ioplin
   BACKBONE: tf_efficientnet_b3
   PRETRAINED: false
-  BACKBONE_INIT: tf_efficientnet_b3_effi_crack500_main_btml.pth
 
 IOPLIN:
   

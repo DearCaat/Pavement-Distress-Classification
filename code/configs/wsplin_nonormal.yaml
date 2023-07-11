@@ -1,6 +1,0 @@
-DATA:
-  VAL_SPLIT: test
-MODEL:
-  NUM_CLASSES: 7
-TEST:
-  BINARY_MODE: false
