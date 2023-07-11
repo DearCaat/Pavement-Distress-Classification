@@ -1,0 +1,10 @@
+DATA:
+  CLS_NOR_INDEX: 0
+TARGET_AUG:
+  NO_AUG: false
+  TO_BIN_TARGET: true
+TEST:
+  BINARY_MODE: false
+MODEL:
+  NUM_CLASSES: 2
+  BACKBONE_INIT: 97.2_effi_b3_bin_backbone.pth

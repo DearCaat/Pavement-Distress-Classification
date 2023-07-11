@@ -1,0 +1,25 @@
+AUG:
+  SEPARATE: true
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  NO_AUG: false
+DATA:
+  DATALOADER_NAME: torch_patch_pict
+  IMG_SIZE: [900,1200]
+  BATCH_SIZE: 4
+  CLS_NOR_INDEX: 0
+  CLASS_MAP: [normal,diseased]
+
+TRAINER:
+  NAME: wsplin
+
+TEST:
+  BINARY_MODE: false
+MODEL:
+  RESUME: wsplin_effi_b3_bin_main_btml.pth
+  NUM_CLASSES: 2
+  NAME: wsplin
+  BACKBONE: tf_efficientnet_b3
+  PRETRAINED: false
+  NUM_CLASSES: 2
+
+TRAIN_MODE: eval

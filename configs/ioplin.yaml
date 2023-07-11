@@ -1,0 +1,46 @@
+AUG:
+  SEPARATE: true
+  NO_AUG: false
+
+TARGET_AUG:
+  NO_AUG: false
+  TO_BIN_TARGET: true
+
+DATA:
+  DATALOADER_NAME: ioplin_patch_pict
+  IMG_SIZE: [900,1200]
+  BATCH_SIZE: 4
+  CLS_NOR_INDEX: 0
+  NUM_PATCHES: 12
+  IS_IP: false
+  PATCH_SIZE: [300,300]
+  STRIDE: [300,300]
+  
+TRAINER:
+  NAME: ioplin
+
+TRAIN:
+  LR_BS_SCALE: 0
+  WEIGHT_DECAY: 1.0e-5
+  BASE_LR: 8.0e-4
+  EPOCHS: 30
+  OPTIMIZER:
+    NAME: rangerlars
+  LR_SCHEDULER:
+    NAME: flat_cosine
+    DECAY_STEPS_RATIO: 0.75
+TEST:
+  BEST_MODEL_METRIC: ['main','auc']
+  BINARY_MODE: false
+
+MODEL:
+  NUM_CLASSES: 2
+  NAME: ioplin
+  BACKBONE: tf_efficientnet_b3
+  PRETRAINED: false
+  BACKBONE_INIT: 97.2_effi_b3_bin_backbone.pth
+
+IOPLIN:
+  UPDATE_FREQ: 2
+  R_THR_RATIO: 0.55
+  MIN_SAMPLE_WEIGHT: 0.1

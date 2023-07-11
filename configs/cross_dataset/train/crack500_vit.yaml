@@ -1,0 +1,36 @@
+AUG:
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  NO_AUG: false
+
+TARGET_AUG:
+  NO_AUG: true
+
+DATA:
+  DATALOADER_NAME: torch_img_pict
+  IMG_SIZE: [224,224]
+  BATCH_SIZE: 32
+  CLS_NOR_INDEX: 0
+  CLASS_MAP: [normal,diseased]
+  TRAIN_SPLIT: all
+
+TEST:
+  BEST_MODEL_METRIC: ['main','auc']
+  BINARY_MODE: false
+  K_FOLD_VAL_ENABLE: true
+  K_FOLD_VAL_ALL: 2
+  PR: true
+  K_FOLD_VAL_TIMES: 5
+
+TRAIN:
+  EPOCHS: 10
+  LR_BS_SCALE: 0
+  BASE_LR: 8.0e-4
+  OPTIMIZER:
+    NAME: sgd
+  LR_SCHEDULER:
+    NAME: null
+MODEL:
+  NAME: vit_base_patch16_224 # vit_small_patch16_224 resnet50 vgg19_bn
+  NUM_CLASSES: 2
+
+TRAIN_MODE: t_e

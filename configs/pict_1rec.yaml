@@ -1,0 +1,57 @@
+TEST:
+  BEST_MODEL_METRIC: ['main','macro_f1']
+  CROP: 0.
+  BINARY_MODE: true
+  #PR: true
+
+TRAIN:
+  MIN_LR: 5.0e-7
+
+DATA:
+  DATALOADER_NAME: torch_img_multiviewpict
+  IMG_SIZE: [224,224]
+
+TRAINER:
+  NAME: pict
+
+MODEL:
+  NAME: pict
+  BACKBONE: swin_small_patch4_window7_224
+  DROP_PATH_RATE: .3
+  DROP_RATE: 0.
+  TOGPU_MODEL_NAME: ['main','teacher']
+
+PICT:
+  CLUSTER:
+    CLUSTER_DISTANCE: cosine
+    PERSISTENT_CENTER: true
+    INIT: k-means++
+    NAME: kmeans
+    NUM_CLUSTER: 3
+    NUM_INIT: 10
+    N_COMPOENTS: null
+    SELECT_THR: 0.99 
+    THR: 0.75
+
+  MULTI_VIEW: strong_none
+
+  EMA_DECAY: 0.9998
+  EMA_FORCE_CPU: false
+
+  INST_NUM_CLASS: 8
+  NOR_THR: 0.35
+  # use baseline model to init the teacher
+  TEACHER_INIT : null
+  TEST_THR: 0.9
+  FILTER_SAMPLES: true
+  CLASSIFY_LOSS: 1.
+
+  # update it per iter
+  THR_REL_EMA_DECAY: 0.75
+  THR_REL_UPDATE_RATIO: 0.01
+
+  THR_FIL_DIS: 0.3
+  THR_FIL_NOR_LOW: 0.5
+  THR_FIL_NOR_HIGH: 0.9
+
+  TEST_CLU_FLIP_SEL: true

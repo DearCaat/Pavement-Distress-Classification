@@ -1,0 +1,45 @@
+AUG:
+  SEPARATE: true
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  NO_AUG: false
+
+DATA:
+  DATALOADER_NAME: ioplin_patch_pict
+  IMG_SIZE: [900,1200]
+  BATCH_SIZE: 4
+  CLS_NOR_INDEX: 0
+  CLASS_MAP: [normal,diseased]
+  VAL_SPLIT: test
+  TRAIN_SPLIT: all
+  NUM_PATCHES: 12
+  
+TRAINER:
+  NAME: ioplin
+
+TRAIN:
+  EPOCHS: 10
+  LR_BS_SCALE: 0
+  WEIGHT_DECAY: 1.0e-5
+  BASE_LR: 8.0e-4
+  OPTIMIZER:
+    NAME: sgd
+
+TEST:
+  BINARY_MODE: false
+  BEST_MODEL_METRIC: ['main','auc']
+  K_FOLD_VAL_ENABLE: true
+  K_FOLD_VAL_ALL: 2
+  K_FOLD_VAL_TIMES: 5
+
+MODEL:
+  NUM_CLASSES: 2
+  NAME: ioplin
+  BACKBONE: tf_efficientnet_b3
+  PRETRAINED: false
+  BACKBONE_INIT: tf_efficientnet_b3_effi_crack500_main_btml.pth
+
+IOPLIN:
+  
+  UPDATE_FREQ: 2
+  R_THR_RATIO: 0.55
+  MIN_SAMPLE_WEIGHT: 0.1

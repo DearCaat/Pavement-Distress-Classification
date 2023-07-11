@@ -1,0 +1,27 @@
+DATA:
+  TIMM: false
+  IMG_SIZE: (224,224) #(384,384)
+  BATCH_SIZE: 32
+  VAL_BATCH_SIZE: 96
+MODEL: 
+  NUM_CLASSES: 2      # binary
+  # swin_base_patch4_window12_384_in22k
+  NAME: swin_small_patch4_window7_224
+  DROP_PATH_RATE: .3
+TRAIN:
+  EPOCHS: 30
+  WARMUP_EPOCHS: 2
+
+AUG:
+  MULTI_VIEW: None
+  NO_AUG: false
+TEST:
+  CROP: 0.
+  BEST_MODEL_METRIC: ['main','auc']     #binary
+  
+THUMB_MODE: true
+MODEL_EMA: true
+#LOG_WANDB: true
+BINARYTRAIN_MODE: true
+TRAINER:
+  NAME: none

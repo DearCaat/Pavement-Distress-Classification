@@ -1,0 +1,57 @@
+TEST:
+  BEST_MODEL_METRIC: ['main','auc']
+  CROP: 0.
+
+TARGET_AUG:
+  NO_AUG: false
+  TO_BIN_TARGET: true
+
+MODEL:
+  NAME: pict
+  BACKBONE: swin_pict_small_patch4_window7_224
+  NUM_CLASSES: 2
+  DROP_PATH_RATE: .3
+  TOGPU_MODEL_NAME: ['main','teacher']
+
+TRAINER:
+  NAME: pict
+
+DATA:
+  DATA_NOR_INDEX: 6
+  CLS_NOR_INDEX: 0
+  DATALOADER_NAME: torch_img_multiviewpict
+  IMG_SIZE: [224,224]
+ 
+PICT:
+  CLUSTER:
+    CLUSTER_DISTANCE: cosine
+    PERSISTENT_CENTER: true
+    INIT: k-means++
+    NAME: kmeans
+    NUM_CLUSTER: 2
+    NUM_INIT: 10
+    N_COMPOENTS: null
+    SELECT_THR: 0.99 
+    THR: 0.75
+
+  MULTI_VIEW: strong_none
+
+  EMA_DECAY: 0.9998
+  EMA_FORCE_CPU: false
+
+  INST_NUM_CLASS: 2
+  TEST_THR: 0.9       # 0.9比0.95,0.99在绝对阈值0.99时表现都好
+  NOR_THR: 0.35
+  CLASSIFY_LOSS: 1.
+  FILTER_SAMPLES: true
+
+  # update it per iter
+  THR_REL_EMA_DECAY: 0.99
+  THR_REL_UPDATE_RATIO: 0.001
+
+  THR_FIL_NOR_LOW: 0.6
+  THR_FIL_NOR_HIGH: 0.95
+  
+  THR_FIL_DIS: 0.5
+
+  TEST_CLU_FLIP_SEL: true

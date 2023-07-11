@@ -1,0 +1,31 @@
+AUG:
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  NO_AUG: false
+
+DATA:
+  DATALOADER_NAME: torch_img_pict
+  IMG_SIZE: [300,300]
+  BATCH_SIZE: 12
+  CLS_NOR_INDEX: 0
+  CLASS_MAP: [normal,diseased]
+  VAL_SPLIT: test
+  TRAIN_SPLIT: all
+
+TEST:
+  BINARY_MODE: false
+  K_FOLD_VAL_ENABLE: true
+
+TRAIN:
+  LR_BS_SCALE: 0
+  BASE_LR: 8.0e-4
+  OPTIMIZER:
+    NAME: sgd
+  LR_SCHEDULER:
+    NAME: null
+MODEL:
+  RESUME: 97.2_effi_b3_bin_backbone.pth
+  FINETUNE: true
+  NAME: tf_efficientnet_b3
+  NUM_CLASSES: 2
+
+TRAIN_MODE: t_e

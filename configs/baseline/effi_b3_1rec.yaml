@@ -1,0 +1,25 @@
+AUG:
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  NO_AUG: false
+DATA:
+  DATALOADER_NAME: torch_img_pict
+  IMG_SIZE: [300,300]
+  BATCH_SIZE: 32
+  CLS_NOR_INDEX: 6
+TRAINER:
+  NAME: iNet_cls
+TRAIN:
+  LR_BS_SCALE: 0
+  BASE_LR: 8.0e-4
+  EPOCHS: 30
+  OPTIMIZER:
+    NAME: rangerlars
+  LR_SCHEDULER:
+    NAME: flat_cosine
+    DECAY_STEPS_RATIO: 0.25
+TEST:
+  BEST_MODEL_METRIC: ['main','macro_f1']
+  BINARY_MODE: true
+MODEL:
+  NUM_CLASSES: 8
+  NAME: tf_efficientnet_b3

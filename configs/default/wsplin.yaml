@@ -1,0 +1,20 @@
+MODEL:
+  BACKBONE_INIT: null
+DATA:
+  LAST_TRANSFORM: false
+  IS_IP: true
+  PATCH_SIZE: [300,300]
+  STRIDE: [300,300]
+  
+WSPLIN:
+  ONLY_BACKBONE: false
+  
+  CLS_HEAD_DP_RATE: 0.5
+  NUM_PATCHES: 17
+  
+  SPARSE_LOSS_ALPHA: 1.0e-3
+  SPARSE_LOSS_RANGE: all   # all, normal, disease
+
+  RANDSM: false
+  SPARSE_RATIO: 1.
+  RANDSM_TEST_NUM: 5

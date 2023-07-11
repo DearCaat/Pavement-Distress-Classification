@@ -1,0 +1,39 @@
+AUG:
+  SEPARATE: true
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  NO_AUG: false
+DATA:
+  DATALOADER_NAME: torch_patch_pict
+  IMG_SIZE: [900,1200]
+  BATCH_SIZE: 4
+  CLS_NOR_INDEX: 0
+  CLASS_MAP: [normal,diseased]
+  VAL_SPLIT: test
+  TRAIN_SPLIT: all
+
+TRAIN:
+  LR_BS_SCALE: 0
+  WEIGHT_DECAY: 1.0e-5
+  BASE_LR: 8.0e-4
+  EPOCHS: 30
+  OPTIMIZER:
+    NAME: sgd
+
+TRAINER:
+  NAME: wsplin
+
+TEST:
+  BINARY_MODE: false
+  BEST_MODEL_METRIC: ['main','auc']
+  K_FOLD_VAL_ENABLE: true
+  
+MODEL:
+  RESUME: wsplin_effi_b3_bin_main_btml.pth
+  FINETUNE: true
+  NUM_CLASSES: 2
+  NAME: wsplin
+  BACKBONE: tf_efficientnet_b3
+  PRETRAINED: false
+  NUM_CLASSES: 2
+
+TRAIN_MODE: t_e

@@ -1,0 +1,28 @@
+AUG:
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  NO_AUG: false
+
+DATA:
+  DATALOADER_NAME: torch_img_pict
+  IMG_SIZE: [300,300]
+  BATCH_SIZE: 12
+  CLS_NOR_INDEX: 0
+  CLASS_MAP: [normal,diseased]
+TRAINER:
+  NAME: wsplin
+TEST:
+  BINARY_MODE: false
+
+MODEL:
+  RESUME: wsplin_effi_b3_bin_main_btml.pth
+  NAME: wsplin
+  BACKBONE: tf_efficientnet_b3
+  NUM_CLASSES: 2
+  BACKBONE_INIT: null
+
+TRAIN_MODE: eval
+WSPLIN:
+  ONLY_BACKBONE: true
+  NUM_PATCHES: 1
+  SPARSE_RATIO: 1.
+  CLS_HEAD_DP_RATE: 0.5

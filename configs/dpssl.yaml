@@ -1,0 +1,39 @@
+AUG:
+  NORM: [[0.5,0.5,0.5],[0.5,0.5,0.5]]
+  SEPARATE: true
+  NO_AUG: false
+
+DATA:
+  DATALOADER_NAME: torch_patch_pict
+  IMG_SIZE: [900,1200]
+  BATCH_SIZE: 4
+  CLS_NOR_INDEX: 6
+  IS_IP: true
+  PATCH_SIZE: [300,300]
+  STRIDE: 300
+
+TRAINER:
+  NAME: dpssl
+
+TRAIN:
+  LR_BS_SCALE: 0
+  LR_SCHEDULER.DECAY_STEPS_RATIO: 0.25
+  WEIGHT_DECAY: 1.0e-5
+  BASE_LR: 8.0e-4
+  EPOCHS: 20
+  OPTIMIZER:
+    NAME: rangerlars
+  LR_SCHEDULER:
+    NAME: flat_cosine
+
+TEST:
+  BEST_MODEL_METRIC: ['main','macro_f1']
+
+MODEL:
+  NUM_CLASSES: 8
+  NAME: dpssl_effi_b3
+  BACKBONE_INIT: 63.5_effi_b3_backbone.pth
+
+DPSSL:
+  DIM_INPUT: 1536
+  DIM_INNER: 384
