@@ -48,6 +48,13 @@ This [paper](https://ieeexplore.ieee.org/abstract/document/9447759) **first prop
 
 **Code: [Github](https://github.com/DearCaat/IOPLIN)**
 
+#### Train IOPLIN
+
+```shell
+# IOPLIN use the pretrained efficientnet_b3 weight to init the model
+python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --cfg ../configs/baseline/effi_b3_1det.yaml ../configs/ioplin.yaml --title=ioplin --opts MODEL.BACKBONE_INIT $PRETRAINED_WEIGHT_PATH
+```
+
 ### PicT (ACMMM 2022)
 
 <img src=".\doc\pict.png" alt="image-20221020105610479" width="500px" />
@@ -58,6 +65,17 @@ This [paper](https://dl.acm.org/doi/abs/10.1145/3503161.3548176) first introduce
 
 **Code: [Github](https://github.com/DearCaat/PicT)**
 
+### Train Swin-S
+```shell
+python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=pict --cfg ../configs/baseline/swin_small_1rec.yaml --title=swin_s
+```
+
+### Train PicT
+```shell
+# PicT uses the pretrained swin_s weight to init the teacher model
+python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=pict --cfg ../configs/baseline/swin_small_1rec.yaml ../configs/pict_1rec.yaml --title=pict --opt PICT.TEACHER_INIT $PRETRAINED_WEIGHT_PATH
+```
+
 ### WSPLIN-IP (ICASSP 2021)
 
 <img src=".\doc\wsplin_ip.png" alt="wsplin_ip" width="500px" />
@@ -65,6 +83,13 @@ This [paper](https://dl.acm.org/doi/abs/10.1145/3503161.3548176) first introduce
 This [paper](https://ieeexplore.ieee.org/abstract/document/9413517) proposes an **end-to-end training framework** based on the weakly supervised patch label inference network.
 
 **Code: [Github](https://github.com/DearCaat/WSPLIN)**
+
+#### Train WSPLIN-IP
+
+```shell
+# WSPLIN use the pretrained efficientnet_b3 weight to init the model
+python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --cfg ../configs/baseline/effi_b3_1det.yaml ../configs/wsplin_1det.yaml --title=wsplin --opts MODEL.BACKBONE_INIT $PRETRAINED_WEIGHT_PATH
+```
 
 ### WSPLIN (IEEE T-ITS)
 
@@ -75,11 +100,32 @@ This [paper](https://ieeexplore.ieee.org/document/10050387) is an extension of [
 **arXiv version: [WSPLIN](https://arxiv.org/abs/2203.16782)**
 
 **Code: [Github](https://github.com/DearCaat/WSPLIN)**
+
+#### Train WSPLIN-SW
+
+```shell
+# WSPLIN use the pretrained efficientnet_b3 weight to init the model
+python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --cfg ../configs/baseline/effi_b3_1det.yaml .../configs/wsplin_1det.yaml --title=wsplin --opts MODEL.BACKBONE_INIT $PRETRAINED_WEIGHT_PATH DATA.IS_IP False NUM_PATCHES 12
+```
+
+#### Train WSPLIN-SS
+
+```shell
+# WSPLIN use the pretrained efficientnet_b3 weight to init the model
+python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --cfg ../configs/baseline/effi_b3_1det.yaml ../configs/wsplin_1det.yaml --title=wsplin --opts MODEL.BACKBONE_INIT $PRETRAINED_WEIGHT_PATH WSPLIN.SPARSE_RATIO 0.5
+```
+
 ### DPSSL (Electronics Letters)
 
 <img src=".\doc\dpssl.png" alt="dpssl" width="500px" />
 
 This [paper](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ell2.12570) try to rethink PDC from the perspective of **Multi-Instance Learning**, and leverages **attention mechanism and Knowledge Distillation** to improve the performance and efficiency.
+
+#### Train DPSSL
+```shell
+# WSPLIN use the pretrained efficientnet_b3 weight to init the model
+python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --cfg ../configs/baseline/effi_b3_1det.yaml ../configs/dpssl.yaml --title=dpssl --opts MODEL.BACKBONE_INIT $PRETRAINED_WEIGHT_PATH
+```
 
 ## Citations
 
