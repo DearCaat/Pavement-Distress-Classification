@@ -22,9 +22,9 @@ With the rapid growth of transport infrastructures such as airports, bridges, an
 
 <img src=".\doc\cqu_bpdd.png" alt="cqu_bpdd" width="500px" />
 
-This [dataset](https://github.com/DearCaat/CQU-BPDD) consists of 60,056 bituminous pavement images, which were automatically captured by the in-vehicle cameras of the professional pavement inspection vehicle at different times from different areas in southern China . Each pavement image is corresponding to a 2 × 3 meters pavement patch of highways and its resolution is 1200×900. The CQU-BPDD involves seven different distresses, namely **transverse crack, massive crack, alligator crack, crack pouring, longitudinal crack, ravelling, repair, and the normal ones.**
+This [dataset](https://github.com/DearCaat/CQU-BPDD) consists of 60,056 bituminous pavement images, which were automatically captured by the in-vehicle cameras of the professional pavement inspection vehicle at different times from different areas in southern China . Each pavement image is corresponding to a 2 × 3 meters pavement patch of highways and its resolution is 1200×900. The CQU-BPDD involves seven different distresses, namely **transverse crack, massive crack, alligator crack, crack pouring, longitudinal crack, ravelling, repair, and the normal ones.** 
 
-[Downloading the dataset](https://pan.baidu.com/s/1KFtu5ZGb3lqqwxRoKUEzMw), _Password:mtf7. (Please note: CQU-BPDD can be only used in the uncommercial case.)_
+[Downloading the dataset](https://pan.baidu.com/s/1nEwGiKZpmwyIq97YV8qdqQ?pwd=mq0a), _Password:mq0a. (Please note: CQU-BPDD can be only used in the uncommercial case.)_
 
 ### CFD-PDD、CrackTree200-PDD、Crack500-PDD
 
