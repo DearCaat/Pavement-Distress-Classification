@@ -108,7 +108,7 @@ This [paper](https://ieeexplore.ieee.org/document/10050387) is an extension of [
 python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --cfg ../configs/baseline/effi_b3_1det.yaml .../configs/wsplin_1det.yaml --title=wsplin --opts MODEL.BACKBONE_INIT $PRETRAINED_WEIGHT_PATH DATA.IS_IP False NUM_PATCHES 12
 ```
 
-#### Train WSPLIN-SS
+#### Train WSPLIN-SP
 
 ```shell
 # WSPLIN use the pretrained efficientnet_b3 weight to init the model
