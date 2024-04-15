@@ -66,7 +66,7 @@ class PicTEngine(INetClsEngine):
             label_pl[:,:] = pl_nor_cls_index 
 
         # the thr of the bag
-        thr_min_nor_conf = get_sigmod_num(config.PICT.THR_FIL_NOR_LOW,epoch-config.PICT.INIT_STAGE_EPOCH,config.TRAIN.EPOCHS-config.PICT.INIT_STAGE_EPOCH,end=config.PICT.THR_FIL_NOR_HIGH,alph=5)
+        thr_min_nor_conf = get_sigmod_num(config.PICT.THR_FIL_NOR_LOW,epoch,config.TRAIN.EPOCHS,end=config.PICT.THR_FIL_NOR_HIGH,alph=5)
 
         # RDT
         mask_ins = ps_mask_dis &  (output_bag_label >= min_nor_thr)
@@ -130,7 +130,7 @@ class PicTEngine(INetClsEngine):
             if len(selec_tmp)>0:
                 selec_rec[i] = ( torch.tensor(len(selec_tmp[selec_tmp==True]) / (len(selec_tmp)*p)),b)
 
-            if len(dis_tmp) > 0 and epoch >= config.PICT.INIT_STAGE_EPOCH:
+            if len(dis_tmp) > 0:
                 thr_tmp = torch.sum(dis_tmp) / (p * len(dis_tmp))
                 self.dis_ratio_list[i].append(thr_tmp.cpu())
                 dis_rec[i] = (thr_tmp,b)
@@ -174,10 +174,10 @@ class PicTEngine(INetClsEngine):
             teacher_ema = models['teacher']
             model = models['main']
 
-            if config.PICT.EMA_DECAY_SCHEDULER == 'warmup' or config.PICT.EMA_DECAY_SCHEDULER == 'warmup_flat':
-                teacher_ema.decay_diff = 0
-            if config.PICT.EMA_DECAY_SCHEDULER == 'warmup_flat':
-                teacher_ema.decay_diff = config.PICT.EMA_DECAY if epoch >= config.PICT.INIT_STAGE_EPOCH else teacher_ema.decay_diff
+            #if config.PICT.EMA_DECAY_SCHEDULER == 'warmup' or config.PICT.EMA_DECAY_SCHEDULER == 'warmup_flat':
+                #teacher_ema.decay_diff = 0
+            #if config.PICT.EMA_DECAY_SCHEDULER == 'warmup_flat':
+                #teacher_ema.decay_diff = config.PICT.EMA_DECAY if epoch >= config.PICT.INIT_STAGE_EPOCH else teacher_ema.decay_diff
 
             teacher_ema.update(model)
 
