@@ -44,6 +44,8 @@ PICT:
   NOR_THR: 0.35
   CLASSIFY_LOSS: 1.
   FILTER_SAMPLES: true
+  # use baseline model to init the teacher
+  TEACHER_INIT : null
 
   # update it per iter
   THR_REL_EMA_DECAY: 0.99
