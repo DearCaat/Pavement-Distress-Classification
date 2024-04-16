@@ -9,9 +9,9 @@ With the rapid growth of transport infrastructures such as airports, bridges, an
   - [CQU-BPDD](#cqu-bpdd)
   - [CFD-PDD、CrackTree200-PDD、Crack500-PDD](#cfd-pddcracktree200-pddcrack500-pdd)
 - [Methods](#method)
-  - [IOPLIN (T-ITS)](#ioplin-t-its)
+  - [IOPLIN (T-ITS)](#ioplin-ieee-t-its)
   - [PicT (MM 2022)](#pict-acmmm-2022)
-  - [WSPLIN (T-ITS)](#wsplin-t-its)
+  - [WSPLIN (T-ITS)](#wsplin-ieee-t-its)
   - [WSPLIN-IP (ICASSP 2021)](#wsplin-ip-icassp-2021)
   - [DPSSL (Electronics Letters)](#dpssl-electronics-letters)
 - [Citations](#citations)
@@ -39,6 +39,14 @@ Three public pavement crack segmentation (pixel-level pavement crack detection) 
 **Download Crack500-PDD**: [Baidu Cloud](https://pan.baidu.com/s/1QbSTx3z9m5L26DTZAUqFqg?pwd=qhhn)
 
 ## Method
+
+### Requirement
+#### Core:
+- `torch == 1.11+cu11.5` (Not required, but recommended.)
+- `timm == 0.67`
+- ...
+#### Docker:
+Download Docker image via [Baidu Cloud](https://pan.baidu.com/s/1VbIwCEMPo7K7Tr1q-x5JcA?pwd=ihh2).
 
 ### IOPLIN (IEEE T-ITS)
 
