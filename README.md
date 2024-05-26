@@ -141,7 +141,7 @@ python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --
 
 ### Intelligent Road Distress Identification Platform Web
 
-A good web and android app for pavement distress detection and recognition. [Github link](https://github.com/FangHeng/Intelligent_Road_Distress_Identification_Platform_Web).
+A good `web` and `android` app for pavement distress detection and recognition based on `PicT` and `WSPLIN series`. [Homepage](https://github.com/FangHeng/Intelligent_Road_Distress_Identification_Platform_Web).
 
 Thanks for contribution：
 
