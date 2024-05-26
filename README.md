@@ -14,6 +14,8 @@ With the rapid growth of transport infrastructures such as airports, bridges, an
   - [WSPLIN (T-ITS)](#wsplin-ieee-t-its)
   - [WSPLIN-IP (ICASSP 2021)](#wsplin-ip-icassp-2021)
   - [DPSSL (Electronics Letters)](#dpssl-electronics-letters)
+- [Application](#application)
+  - [Intelligent Road Distress Identification Platform Web](#intelligent-road-distress-identification-platform-web)
 - [Citations](#citations)
 
 ## Dataset
@@ -134,6 +136,18 @@ This [paper](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ell2.1
 # WSPLIN use the pretrained efficientnet_b3 weight to init the model
 python3 main.py --data-path=$DATA_PATH --output=$OUTPUT_PATH --project=wsplin --cfg ../configs/baseline/effi_b3_1det.yaml ../configs/dpssl.yaml --title=dpssl --opts MODEL.BACKBONE_INIT $PRETRAINED_WEIGHT_PATH
 ```
+
+## Application
+
+### Intelligent Road Distress Identification Platform Web
+
+A good web and android app for pavement distress detection and recognition. [Github link](https://github.com/FangHeng/Intelligent_Road_Distress_Identification_Platform_Web).
+
+Thanks for contribution：
+
+- [Fangheng (方珩)](https://github.com/FangHeng)
+- [Mr-lander (嵇禄)](https://github.com/Mr-lander)
+- [HJingCheng (rui huang)](https://github.com/HJingCheng)
 
 ## Citations
 
